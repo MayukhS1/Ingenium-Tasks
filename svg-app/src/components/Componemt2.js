@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {fadeIn, bounce} from 'react-animations';
+import React from 'react';
+// import {fadeIn, bounce} from 'react-animations';
 import {Spring} from 'react-spring/renderprops'
 
 
