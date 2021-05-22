@@ -1,0 +1,49 @@
+html, body {
+    margin: 0 0;
+    height: 100%;
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #b3fff4;
+}
+
+#morph {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    /*allows to click the button*/
+    z-index: 1;
+  }
+
+.btn-container{ 
+    position: fixed;
+    z-index: 2;
+    margin: 9em 13em;
+}
+
+button {
+    background: #71faff;
+    margin-top: 10em;
+    margin-left: 5em;
+    border: none;
+    color: #2b2b2b;
+    padding: 4px;
+    border-radius: 8px;
+    width: 10em;
+    cursor: pointer;
+  }
+
+.ghost-elm{
+    background-color: #2de5eb;
+}
+
+.clicked {
+    transition: 0.4s;
+    d: path("M229.16,137.55a60.94,60.94,0,0,0-76.09-40.21C44.45,130.63,3.48,177.47.09,277.76c-4,118,134,42,193,134s-47.89,102.72-83.5,314.5c-37,220,51.5,187.5,193.5,203.5s373.63,56.81,351-103c-17-120,80-53,185-142s74-302-16-293-348.5,385.5-321.5,236.5,156.5-364.5,95.5-471.5-150-234-198-97,45,292-63,225C273.27,245.79,243.27,183.15,229.16,137.55Z");
+  }
+
+/*
+M229.16,137.55a60.94,60.94,0,0,0-76.09-40.21C44.45,130.63,3.48,177.47.09,277.76c-4,118,134,42,193,134s-47.89,102.72-83.5,314.5c-37,220,51.5,187.5,193.5,203.5s373.63,56.81,351-103c-17-120,80-53,185-142s74-302-16-293-348.5,385.5-321.5,236.5,156.5-364.5,95.5-471.5-150-234-198-97,45,292-63,225C273.27,245.79,243.27,183.15,229.16,137.55Z
+*/

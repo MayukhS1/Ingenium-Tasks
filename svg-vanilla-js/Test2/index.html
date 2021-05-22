@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<HTMl class="fixed-content">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test 2</title>
+        <link rel="stylesheet" type="text/css" href="CSS/main.css">
+        <!-- <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" 
+            integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        /> -->
+    </head>
+    <body>
+        <div id="back-ground-div" class="inner1">
+            <svg id="morph" height="100%" width="100%" viewBox="0 0 1920 1080">
+                <path class="morph" id="svg-path"
+                d="M229.16,137.55a60.94,60.94,0,0,0-76.09-40.21C44.45,130.63,3.48,177.47.09,277.76c-4,118,134,42,193,134s-188,80-148,291,116,211,258,227,373.63,56.81,351-103c-17-120,80-53,185-142s74-302-16-293-411,135-384-14,219-114,158-221-150-234-198-97,45,292-63,225C273.27,245.79,243.27,183.15,229.16,137.55Z" 
+                fill="#2de5eb"></path>
+            </svg>
+        </div>
+
+        <div class="btn-container inner2">
+            <button id="btn" onclick="clicked()"><p>Next</p></button>
+        </div>
+
+        <script>
+            var morphSvg = document.getElementById("svg-path");
+            console.log(morphSvg.classList);
+            function clicked(){
+                morphSvg.classList.add("clicked");
+                console.log("clicked");
+                console.log(morphSvg.classList);
+            };
+        </script>
+       
+    </body>
+</HTMl>
