@@ -18,18 +18,43 @@
     </head>
     <body>
         
-       <svg id="morph" height="100%" width="100%" viewBox="0 0 1280 720">
+       <svg id="morph" height="100%" width="100%" viewBox="0 0 1920 1080">
             <path class="morph" 
-            d="M0,65.41c171.77,60.8,219.77-11.17,269.59-32.13,64-26.93,324,31.55,389.45,8.68C722.56,19.78,924.57.27,1086.61,75.84S1280,33.28,1280,33.28V0H0Z" fill="#002E3A"></path>
+            d="M0,0H0S177.589-3.419,435.908,0C728.248,0,675.25-1.71,998.363,0s364.143-1.71,608.614,0,312.892,0,312.892,0H0Z" fill="#002E3A"></path>
         </svg>
         
         
         <section id="sect1">
             <h1>Ingenium</h1>
             <p>The manuscript of vision</p>
-
-            <button id="bttn-click">Next</button>
+            
+            <button id="bttn-click" onclick="fillThePage()">Next</button>
         </section>
+        <script>
+            function fillThePage(){
+            anime({
+                targets: ['.morph'],
+                d: [
+                    {value: [
+                        'M0,0V496.781s90.608-143.605,425.688-141.9c314.564-' +
+                        '3.419,210.261,314.564,562.455,314.565s315.651-285.5,600.066-' +
+                        '285.5,331.66,181.216,331.66,181.216V0Z',
 
+                        'M0,0V1079.819s94.027-' +
+                        '1.71,429.107,0c227.375,3.418,211.971,0,564.164,0s340.379-' +
+                        '1.709,569.293,0,357.3,0,357.3,0V0Z',
+
+                    ]},
+                    
+                ],
+                baseFrequency: 0,
+                scale: 1,
+                direction: 'alternate',
+                easing: 'easeInOutExpo',
+                autoplay: false,
+                duration: 2000,
+            });
+        };
+        </script>
     </body>
 </html>
