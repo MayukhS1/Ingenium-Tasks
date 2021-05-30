@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import Header from './contents/Header';
 import Base from './contents/Base';
 import Home from './contents/Home';
 import Toppings from './contents/Toppings';
 import Order from './contents/Order';
+import {AnimatePresence} from 'framer-motion';
+import Modal from './contents/Modal';
+import './App.css';
 
 function App() {
+  const location = useLocation();
+
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
+  const [showModal, setShowModal] = useState(false);
+
+
 
   const addBase = (base) => {
     setPizza({ ...pizza, base })
@@ -26,20 +34,24 @@ function App() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route path="/base">
-          <Base addBase={addBase} pizza={pizza} />
-        </Route>
-        <Route path="/toppings">
-          <Toppings addTopping={addTopping} pizza={pizza} />
-        </Route>
-        <Route path="/order">
-          <Order pizza={pizza} />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <Modal showModal={showModal} setShowModal={setShowModal}/>
+      <AnimatePresence exitBeforeEnter onExitComplete={()=> setShowModal(false)}>
+        <Switch location={location} key={location.key}>
+          <Route path="/base">
+            <Base addBase={addBase} pizza={pizza} />
+          </Route>
+          <Route path="/toppings">
+            <Toppings addTopping={addTopping} pizza={pizza} />
+          </Route>
+          <Route path="/order">
+            <Order pizza={pizza} setShowModal={setShowModal}/>
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </AnimatePresence>
+
     </>
   );
 }

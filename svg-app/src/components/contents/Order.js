@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import React, {useEffect} from 'react';
+import {motion} from 'framer-motion';
 
 const containerVarients ={
     hidden:{
@@ -15,7 +15,7 @@ const containerVarients ={
             dumping: 8,
             when:"beforeChildren",
             staggerChildren: .4,         }
-    },
+    }
 };
 
 const childVarient={
@@ -31,11 +31,13 @@ const childVarient={
     }
 };
 
-const Order = ({ pizza }) => {
-  const [showTitle, setShowTitle] = useState(true);
-  setTimeout(()=>{
-    setShowTitle(false);
-  },4000);
+const Order = ({ pizza, setShowModal }) => {
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setShowModal(true);
+    },5000)
+  }, [setShowModal]) //it will only run if setShowModal changes
 
   return (
     <motion.div className="container order"
@@ -43,19 +45,15 @@ const Order = ({ pizza }) => {
     initial="hidden"
     animate="visible"
     >
-      <AnimatePresence>
-        {showTitle && (
-                <motion.h2
-                  exit={{ y:-1000 }}
-                >Thank you for your order :)</motion.h2>
-        )}
-      </AnimatePresence>
+      <h2>Thank you for your order :)</h2>
+      
       <motion.p
         variants={childVarient}
       >You ordered a {pizza.base} pizza with:</motion.p>
+      
       <motion.div
         variants={childVarient}
-    >
+      >
         {pizza.toppings.map(topping => <div key={topping}>{topping}</div>)}
       </motion.div>
       

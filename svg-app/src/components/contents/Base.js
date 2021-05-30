@@ -16,6 +16,10 @@ const containerVarients ={
             mass: .8,
         }
     },
+    exit: {
+      x: '-100vw',
+      transition : {ease : 'easeInOut'}
+    }
 };
 
 const Base = ({ addBase, pizza }) => {
@@ -28,6 +32,7 @@ const Base = ({ addBase, pizza }) => {
         variants={containerVarients}
         initial="hidden"
         animate="visible"
+        exit="exit"
         // transition={{delay: .2, duration: .3, transition: 'spring',  stiffness: 150}}
     >
 
