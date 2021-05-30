@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import React, {useEffect} from 'react';
+import {motion} from 'framer-motion';
 
 const containerVarients ={
     hidden:{
@@ -15,10 +15,6 @@ const containerVarients ={
             dumping: 8,
             when:"beforeChildren",
             staggerChildren: .4,         }
-    },
-    exit: {
-      x: '100vw',
-      transition : {ease : 'easeInOut'}
     }
 };
 
@@ -48,7 +44,6 @@ const Order = ({ pizza, setShowModal }) => {
     variants={containerVarients}
     initial="hidden"
     animate="visible"
-    exit="exit"
     >
       <h2>Thank you for your order :)</h2>
       

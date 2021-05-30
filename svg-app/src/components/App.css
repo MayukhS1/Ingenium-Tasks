@@ -26,3 +26,24 @@ h1{
     background: rgba(0, 0, 0, .5);
     z-index: 1;
 }
+
+.modal {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background: #eee6e6;
+    padding: 40px 40px;
+    border-radius: 10px;
+}
+
+.modal button{
+    color: #444;
+    border-color: #444;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.modal p{
+    color: #444;
+    font-weight: bold;
+}
